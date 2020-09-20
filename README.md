@@ -1,5 +1,5 @@
 # ReDI_Frontend
-project title:
+Final project title:
 ## Weather app
 
 ### Details:
