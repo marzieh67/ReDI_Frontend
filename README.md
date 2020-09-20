@@ -1,4 +1,4 @@
-# ReDI_Frontend
+# ReDI_Frontend Final Project
 Final project title:
 ## Weather app
 
