@@ -7,19 +7,31 @@
     <title>Weather App</title>
          <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    
-        <!-- import the webpage's javascript file -->
-        <script src="/script.js" defer></script>
+        <link rel = "stylesheet" href="style.css">;
     </head>
 <body>
 <section>
-    <div class="search contain">
-        <h1>Weather App</h1>
-        <form>
+  <div class="container">
+    <div class="app-title"><p>Weather App</p></div>
+    <form>
            City: <input type="text" placeholder="name of city">
            <button type="submit">Search</button>
         </form>
+    
+    
+      <div class="notification"></div>
+        <div class="weather-container">
+          <div class="weather-icon"><img src="icons/unknown.png" alt =""> 
+            </div>
+        <div class="temperature-value">
+          <p> -  &#176 <span> K</span></p></div>
+        <div class="temperature-description">
+          <p>-</p></div>
+        <div class="location">
+          <p>location</p></div>
     </div>
+  </div>
+
     <div class="date">
         <h2>date: </h2>
     </div>
@@ -43,13 +55,13 @@
             <tbody>
               <tr>
                 <th scope="row">weather overview</th>
-                <td>icon1</td>
-                <td>icon2</td>
-                <td>icon3</td>
-                <td>icon4</td>
-                <td>icon5</td>
-                <td>icon6</td>
-                <td>icon7</td>
+                <td><img src="icons/unknown.png" alt =""></td>
+                <td><img src="icons/unknown.png" alt =""></td>
+                <td><img src="icons/unknown.png" alt =""></td>
+                <td><img src="icons/unknown.png" alt =""></td>
+                <td><img src="icons/unknown.png" alt =""></td>
+                <td><img src="icons/unknown.png" alt =""></td>
+                <td><img src="icons/unknown.png" alt =""></td>
               </tr>
               <tr>
                 <th scope="row">T_max/T_min</th>
@@ -73,19 +85,17 @@
               </tr>
             </tbody>
           </table>
-    </div>   
+    </div>
+  </div>   
 </section>
-<!--Should be done: 
-    try to fix the API; it does not work
-    importing icons
-    how to import photoes of cities
-    -->
+<script src="script.js"></script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    
   </body>
 </body>
 </html>
