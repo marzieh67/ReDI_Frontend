@@ -20,7 +20,7 @@ document.getElementById('citySearch').addEventListener('click', getWeather);
 function getWeather() {
     let cityName = document.getElementById("searchBar").value;
     console.log(cityName);
-    const api = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}&units=metric`;
+    const api = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}&units=metric`;
     console.log(api);
     fetch(api).then(function (response) {
         let data = response.json();
