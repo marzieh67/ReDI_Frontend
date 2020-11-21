@@ -7,7 +7,7 @@
     <title>Weather App</title>
          <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <link rel = "stylesheet" href="style.css">;
+        <link rel = "stylesheet" href="style.css">
     </head>
 <body>
   <div class="app-title"><h1><b>Weather App</b></h1></div>
@@ -18,22 +18,22 @@
            <input type="button" id="citySearch" value="Search">
           </div>
           </form> 
-        <div class="location"><p> - </p></div>
-        <div class="currentDate"><p> - </p></div>
-          <div class="weather-icon"><p><img src="icons/unknown.png" alt =""> </p>
+        <div class="location"><p>  </p></div>
+        <div class="currentDate"><p>  </p></div>
+          <div class="weather-icon"><p> </p>
             </div>
             <div class="temperature-description">
-              <p> - </p></div>
+              <p>  </p></div>
         <div class="temperature-value">
-           <p><span></span> - &#176 <span> C</span></p></div>
+           <p><span></span>  &#176 <span> C</span></p></div>
         <div class="temperature-feels-value">
-          Feels like:<p> -  &#176 <span> C</span></p></div>
+          Feels like:<p>   &#176 <span> C</span></p></div>
         <div class="temperature-min-value">
-          Min Temperature:<p> -  &#176 <span> C</span></p></div>
+          Min Temperature:<p>  &#176 <span> C</span></p></div>
         <div class="temperature-max-value">
-          Max Temperature:<p> -  &#176 <span> C</span></p></div>
+          Max Temperature:<p>  &#176 <span> C</span></p></div>
         <div class="humidity">
-          Humidity:<p> -  <span>&#37</span></p></div>
+          Humidity:<p> <span>&#37</span></p></div>
   </div>
 
     <div class="date">
@@ -47,22 +47,16 @@
             </thead>
           </table>
         </div>
-          <div class="card-deck">
-            <div class="card">
-              <div class="weather-day0-icon"><p><img src="icons/unknown.png" alt =""> </p></div>
-              <div class="card-body">
-                <div class="day0-Date"><p> - </p></div>
-                <h5 class="card-title" style="font-size: 1rem;">Daily Temperature</h5>
-                <div class="temperature-day0-value"><p></p><span></span> - &#176 <span> C</span></p></div>               
-              </div>
-            </div>
-            <div class="card">
-              <div class="weather-day1-icon"><p><img src="icons/unknown.png" alt =""> </p></div>
-              <div class="card-body">
-                <h5 class="card-title" style="font-size: 1rem;">Daily Temperature</h5>
-                <div class="temperature-day1-value"><p></p><span></span> - &#176 <span> C</span></p></div>               
-              </div>
-            </div>
+        <div id= "predictionElement"></div>
+           
+              <div class="card">
+              <div class="day-of-week" id ="predDay"><p></p></div>
+              <div class="weather-pred-icon" id = "predIcon"><p> </p></div>
+                <div class="tempPredMax" id = "predMaxTemp"><p><span></span>  <span> </span></p></div>
+                <div class="tempPredMin" id = "predMinTemp"><p><span></span>  <span> </span></p></div>
+              </div>     
+            
+           <!---
             <div class="card">
               <div class="weather-day2-icon"><p><img src="icons/unknown.png" alt =""> </p></div>
               <div class="card-body">
@@ -98,8 +92,7 @@
                 <div class="temperature-day6-value"><p></p><span></span> - &#176 <span> C</span></p></div>               
               </div>
             </div>
-          </div>
-    
+            -->  
 <script src="script.js"></script>
 
 
