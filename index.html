@@ -12,13 +12,14 @@
 <body>
   <div class="app-title"><h1><b>Weather App</b></h1></div>
   <div class="container">
-    <form id="citySearch">
+    <form >
       <div class="searchBox">
            City: <input type="text" id ="searchBar" placeholder="search for a city">
-           <input type="button" value="Search">
+           <input type="button" id="citySearch" value="Search">
           </div>
           </form> 
         <div class="location"><p> - </p></div>
+        <div class="currentDate"><p> - </p></div>
           <div class="weather-icon"><p><img src="icons/unknown.png" alt =""> </p>
             </div>
             <div class="temperature-description">
@@ -36,57 +37,71 @@
   </div>
 
     <div class="date">
-        <h2>7 days prediction: </h2>
     </div>
-    <div class="weekly prediction">
+    <div class="weekly_prediction">
         <table class="table table-hover">
             <thead>
               <tr>
-                <th scope="col"></th>
-                <th scope="col">Monday</th>
-                <th scope="col">Tuesday</th>
-                <th scope="col">Wednesday</th>
-                <th scope="col">Thursday</th>
-                <th scope="col">Friday</th>
-                <th scope="col">Saturday</th>
-                <th scope="col">Sunday</th>
+                <th scope="col"><h4>Weekly prediction</h4></th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th scope="row">weather overview</th>
-                <td><img src="icons/unknown.png" alt =""></td>
-                <td><img src="icons/unknown.png" alt =""></td>
-                <td><img src="icons/unknown.png" alt =""></td>
-                <td><img src="icons/unknown.png" alt =""></td>
-                <td><img src="icons/unknown.png" alt =""></td>
-                <td><img src="icons/unknown.png" alt =""></td>
-                <td><img src="icons/unknown.png" alt =""></td>
-              </tr>
-              <tr>
-                <th scope="row">T_max/T_min</th>
-                <td>28/15</td>
-                <td>23/12</td>
-                <td>25/12</td>
-                <td>17/10</td>
-                <td>16/9</td>
-                <td>20/12</td>
-                <td>25/17</td>
-              </tr>
-              <tr>
-                <th scope="row"> chance of prediction(%)</th>
-                <td>0</td>
-                <td>2</td>
-                <td>3</td>
-                <td>90</td>
-                <td>100</td>
-                <td>53</td>
-                <td>10</td>
-              </tr>
-            </tbody>
           </table>
-    </div>
+        </div>
+          <div class="card-deck">
+            <div class="card">
+              <div class="weather-day0-icon"><p><img src="icons/unknown.png" alt =""> </p></div>
+              <div class="card-body">
+                <div class="day0-Date"><p> - </p></div>
+                <h5 class="card-title" style="font-size: 1rem;">Daily Temperature</h5>
+                <div class="temperature-day0-value"><p></p><span></span> - &#176 <span> C</span></p></div>               
+              </div>
+            </div>
+            <div class="card">
+              <div class="weather-day1-icon"><p><img src="icons/unknown.png" alt =""> </p></div>
+              <div class="card-body">
+                <h5 class="card-title" style="font-size: 1rem;">Daily Temperature</h5>
+                <div class="temperature-day1-value"><p></p><span></span> - &#176 <span> C</span></p></div>               
+              </div>
+            </div>
+            <div class="card">
+              <div class="weather-day2-icon"><p><img src="icons/unknown.png" alt =""> </p></div>
+              <div class="card-body">
+                <h5 class="card-title" style="font-size: 1rem;">Daily Temperature</h5>
+                <div class="temperature-day2-value"><p></p><span></span> - &#176 <span> C</span></p></div>               
+              </div>
+            </div>
+            <div class="card">
+              <div class="weather-day3-icon"><p><img src="icons/unknown.png" alt =""> </p></div>
+              <div class="card-body">
+                <h5 class="card-title" style="font-size: 1rem;">Daily Temperature</h5>
+                <div class="temperature-day3-value"><p></p><span></span> - &#176 <span> C</span></p></div>               
+              </div>
+            </div>
+            <div class="card">
+              <div class="weather-day4-icon"><p><img src="icons/unknown.png" alt =""> </p></div>
+              <div class="card-body">
+                <h5 class="card-title" style="font-size: 1rem;">Daily Temperature</h5>
+                <div class="temperature-day4-value"><p></p><span></span> - &#176 <span> C</span></p></div>               
+              </div>
+            </div>
+            <div class="card">
+              <div class="weather-day5-icon"><p><img src="icons/unknown.png" alt =""> </p></div>
+              <div class="card-body">
+                <h5 class="card-title" style="font-size: 1rem;">Daily Temperature</h5>
+                <div class="temperature-day5-value"><p></p><span></span> - &#176 <span> C</span></p></div>               
+              </div>
+            </div>
+            <div class="card">
+              <div class="weather-day6-icon"><p><img src="icons/unknown.png" alt =""> </p></div>
+              <div class="card-body">
+                <h5 class="card-title" style="font-size: 1rem;">Daily Temperature</h5>
+                <div class="temperature-day6-value"><p></p><span></span> - &#176 <span> C</span></p></div>               
+              </div>
+            </div>
+          </div>
+    
 <script src="script.js"></script>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

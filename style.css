@@ -3,16 +3,24 @@
 }
 
 body{
+    margin-left: 30px;
     background-color: #FFF;
+    background-image: url("jz_csweather_060619.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
 }
 
 .container{
-    width: 300px;    
+    padding-top : 30px;
+    width: 400px;    
     background-color: rgba(203, 247, 250, 0.973);
     display: block;
     margin: 0 auto;
     border-radius: 10px;
     padding-bottom : 50px;
+
 }
 
 .app-title{
@@ -20,7 +28,7 @@ body{
     width: 300px;
     height: 50px;
     border-radius: 10px 10px 0 0;
-    color: blue;
+    color: rgb(229, 255, 0);
 }
 
 .app-title p{
@@ -93,4 +101,21 @@ body{
     color: #293251;
     text-align: center;
     font-size: 1.5em;
+    font-weight: bold;
+}
+.currentDate p{
+    margin: 0;
+    padding: 0;
+    color: #293251;
+    text-align: center;
+    font-size: 1.25em;
+}
+.card-deck {
+    text-align: center;
+}
+.weekly_prediction {
+    background-color: beige;
+    text-align: center;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
 }
