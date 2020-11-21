@@ -1,52 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-     <!-- Required meta tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Weather App</title>
-         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <link rel = "stylesheet" href="style.css">
-    </head>
+  <!-- Required meta tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Weather App</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
-  <div class="app-title"><h1><b>Weather App</b></h1></div>
+  <div class="app-title">
+    <h1>Weather App</h1>
+  </div>
   <div class="container">
-    <form >
+    <form>
       <div class="searchBox">
-           City: <input type="text" id ="searchBar" placeholder="search for a city">
-           <input type="button" id="citySearch" value="Search">
-          </div>
-          </form> 
-        <div class="location"><p>  </p></div>
-        <div class="currentDate"><p>  </p></div>
-          <div class="weather-icon"><p> </p>
-            </div>
-            <div class="temperature-description">
-              <p>  </p></div>
-        <div class="temperature-value">
-           <p><span></span>  &#176 <span> C</span></p></div>
-        <div class="temperature-feels-value">
-          Feels like:<p>   &#176 <span> C</span></p></div>
-        <div class="temperature-min-value">
-          Min Temperature:<p>  &#176 <span> C</span></p></div>
-        <div class="temperature-max-value">
-          Max Temperature:<p>  &#176 <span> C</span></p></div>
-        <div class="humidity">
-          Humidity:<p> <span>&#37</span></p></div>
+        City: <input type="text" id="searchBar" placeholder="search for a city">
+        <input type="button" id="citySearch" value="Search" class="btn btn-info">
+      </div>
+    </form>
+
+    <div class="location">
+      <p> </p>
+    </div>
+    <div class="currentDate">
+      <p> </p>
+    </div>
+    <div class="weather-icon">
+      <p> </p>
+    </div>
+    <div class="temperature-description">
+      <p> </p>
+    </div>
+    <div class="temperature-value">
+      <p><span></span> <span></span></p>
+    </div>
+    <div class="temperature-feels-value">
+      <img src="images/icons/32_cloud_weather.webp" style="width:50px;height:50px;">Feels like:<p><span></span></p>
+    </div>
+    <div class="temperature-max-value">
+      <img src="images/icons/weather_43-128.webp" style="width:50px;height:60px;">Max Temperature:<p><span></span></p>
+    </div>
+    <div class="temperature-min-value">
+      <img src="images/icons/weather_42-128.webp" style="width:50px;height:60px;">Min Temperature:<p> <span></span></p>
+    </div>
+    <div class="humidity">
+      <img src="images/icons/weather_44-128.webp" style="width:50px;height:60px;">Humidity:<p> <span></span></p>
+    </div>
+    <div class="wind">
+      <img src="images/icons/weather_41-128.webp" style="width:50px;height:60px;">Wind Speed:<p> <span></span></p>
+    </div>
+    <div class="pressure">
+      <img src="images/icons/wi-barometer.svg" style="width:50px;height:60px;">Pressure:<p> <span></span></p>
+    </div>
   </div>
 
-    <div class="date">
-    </div>
-    <div class="weekly_prediction">
-        <table class="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col"><h4>Weekly prediction</h4></th>
-              </tr>
-            </thead>
-          </table>
-        </div>
+  <div class="date">
+  </div>
+  <div class="weekly_prediction">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col"> <img src="images/icons/cloudiness.webp" style="width:70px;height:70px;">
+            <h4>Weekly prediction</h4>
+          </th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <!---
         <div id= "predictionElement"></div>
            
               <div class="card">
@@ -56,52 +82,126 @@
                 <div class="tempPredMin" id = "predMinTemp"><p><span></span>  <span> </span></p></div>
               </div>     
             
-           <!---
-            <div class="card">
-              <div class="weather-day2-icon"><p><img src="icons/unknown.png" alt =""> </p></div>
-              <div class="card-body">
-                <h5 class="card-title" style="font-size: 1rem;">Daily Temperature</h5>
-                <div class="temperature-day2-value"><p></p><span></span> - &#176 <span> C</span></p></div>               
-              </div>
-            </div>
-            <div class="card">
-              <div class="weather-day3-icon"><p><img src="icons/unknown.png" alt =""> </p></div>
-              <div class="card-body">
-                <h5 class="card-title" style="font-size: 1rem;">Daily Temperature</h5>
-                <div class="temperature-day3-value"><p></p><span></span> - &#176 <span> C</span></p></div>               
-              </div>
-            </div>
-            <div class="card">
-              <div class="weather-day4-icon"><p><img src="icons/unknown.png" alt =""> </p></div>
-              <div class="card-body">
-                <h5 class="card-title" style="font-size: 1rem;">Daily Temperature</h5>
-                <div class="temperature-day4-value"><p></p><span></span> - &#176 <span> C</span></p></div>               
-              </div>
-            </div>
-            <div class="card">
-              <div class="weather-day5-icon"><p><img src="icons/unknown.png" alt =""> </p></div>
-              <div class="card-body">
-                <h5 class="card-title" style="font-size: 1rem;">Daily Temperature</h5>
-                <div class="temperature-day5-value"><p></p><span></span> - &#176 <span> C</span></p></div>               
-              </div>
-            </div>
-            <div class="card">
-              <div class="weather-day6-icon"><p><img src="icons/unknown.png" alt =""> </p></div>
-              <div class="card-body">
-                <h5 class="card-title" style="font-size: 1rem;">Daily Temperature</h5>
-                <div class="temperature-day6-value"><p></p><span></span> - &#176 <span> C</span></p></div>               
-              </div>
-            </div>
-            -->  
-<script src="script.js"></script>
+           ---!-->
+  <div class="card-deck">
+    <div class="card">
+      <div class="weather-day0-icon">
+        <p></p>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title" id="day0" style="font-size: 1rem;"><span></span></h5>
+        <div class="temperature-Max-day0-value">
+          <p></p><span></span> <span> </span></p>
+        </div>
+        <div class="temperature-Min-day0-value">
+          <p></p><span></span> <span> </span></p>
+        </div>
+
+      </div>
+    </div>
+    <div class="card">
+      <div class="weather-day1-icon">
+        <p></p>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title" id="day1" style="font-size: 1rem;"><span></span></h5>
+        <div class="temperature-Max-day1-value">
+          <p></p><span></span> <span> </span></p>
+        </div>
+        <div class="temperature-Min-day1-value">
+          <p></p><span></span> <span> </span></p>
+        </div>
+
+      </div>
+    </div>
+    <div class="card">
+      <div class="weather-day2-icon">
+        <p> </p>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title" id="day2" style="font-size: 1rem;"><span></span></h5>
+        <div class="temperature-Max-day2-value">
+          <p></p><span></span> <span> </span></p>
+        </div>
+        <div class="temperature-Min-day2-value">
+          <p></p><span></span> <span> </span></p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="weather-day3-icon">
+        <p> </p>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title" id="day3" style="font-size: 1rem;"><span></span></h5>
+        <div class="temperature-Max-day3-value">
+          <p></p><span></span> <span> </span></p>
+        </div>
+        <div class="temperature-Min-day3-value">
+          <p></p><span></span> <span></span></p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="weather-day4-icon">
+        <p> </p>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title" id="day4" style="font-size: 1rem;"><span></span></h5>
+        <div class="temperature-Max-day4-value">
+          <p></p><span></span> <span> </span></p>
+        </div>
+        <div class="temperature-Min-day4-value">
+          <p></p><span></span> <span> </span></p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="weather-day5-icon">
+        <p> </p>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title" id="day5" style="font-size: 1rem;"><span></span></h5>
+        <div class="temperature-Max-day5-value">
+          <p></p><span></span> <span> </span></p>
+        </div>
+        <div class="temperature-Min-day5-value">
+          <p></p><span></span> <span> </span></p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="weather-day6-icon">
+        <p> </p>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title" id="day6" style="font-size: 1rem;"><span></span></h5>
+        <div class="temperature-Max-day6-value">
+          <p></p><span></span> <span> </span></p>
+        </div>
+        <div class="temperature-Min-day6-value">
+          <p></p><span></span> <span> </span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    
-  </body>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+  </script>
+
 </body>
+</body>
+
 </html>

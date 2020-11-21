@@ -1,15 +1,13 @@
-*{
-    font-family: "Comic Sans MS", cursive, sans-serif;
-}
-
 body{
     margin-left: 30px;
+    margin-right: 30px;
     background-color: #FFF;
     background-image: url("images/jz_csweather_060619.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     height: 100%;
+    font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 .container{
@@ -22,22 +20,28 @@ body{
     padding-bottom : 50px;
 
 }
+p {
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: 1em;
+    margin-inline-start: 50px;
+    margin-inline-end: 0px;
+}
 
 .app-title{
-    text-align: center;
     width: 300px;
     height: 50px;
     border-radius: 10px 10px 0 0;
     color: rgb(229, 255, 0);
+    font-family:  Impact, Charcoal, sans-serif; 
+    font-size: 65px; 
+    font-weight: normal; 
+    line-height: 60px; 
+    margin: auto; 
+    text-transform: uppercase; 
+    text-align: center;
 }
 
-.app-title p{
-    text-align: center;
-    padding: 15px;
-    margin: 0 auto;
-    font-size: 1.2em;
-    color: #293251;
-}
 
 .notification{
     background-color: #FFF;
@@ -118,4 +122,8 @@ body{
     text-align: center;
     font-style: italic;
     font-family: 'Times New Roman', Times, serif;
+    margin-top: 25px;
+}
+.card-deck {
+    margin-bottom: 25px;
 }

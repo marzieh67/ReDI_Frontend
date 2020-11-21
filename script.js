@@ -9,14 +9,25 @@ const descElement = document.querySelector(".temperature-description p");
 const locationElement = document.querySelector(".location p");
 const currentDateElement = document.querySelector(".currentDate p");
 const humidityElement = document.querySelector(".humidity p");
-/*
-const temDay0Element = document.querySelector(".temperature-day0-value");
-const temDay1Element = document.querySelector(".temperature-day1-value");
-const temDay2Element = document.querySelector(".temperature-day2-value");
-const temDay3Element = document.querySelector(".temperature-day3-value");
-const temDay4Element = document.querySelector(".temperature-day4-value");
-const temDay5Element = document.querySelector(".temperature-day5-value");
-const temDay6Element = document.querySelector(".temperature-day6-value");
+const windSpeedElement = document.querySelector(".wind p");
+const PressureElement = document.querySelector(".pressure p");
+
+const temMax0Element = document.querySelector(".temperature-Max-day0-value");
+const temMax1Element = document.querySelector(".temperature-Max-day1-value");
+const temMax2Element = document.querySelector(".temperature-Max-day2-value");
+const temMax3Element = document.querySelector(".temperature-Max-day3-value");
+const temMax4Element = document.querySelector(".temperature-Max-day4-value");
+const temMax5Element = document.querySelector(".temperature-Max-day5-value");
+const temMax6Element = document.querySelector(".temperature-Max-day6-value");
+
+const temMin0Element = document.querySelector(".temperature-Min-day0-value");
+const temMin1Element = document.querySelector(".temperature-Min-day1-value");
+const temMin2Element = document.querySelector(".temperature-Min-day2-value");
+const temMin3Element = document.querySelector(".temperature-Min-day3-value");
+const temMin4Element = document.querySelector(".temperature-Min-day4-value");
+const temMin5Element = document.querySelector(".temperature-Min-day5-value");
+const temMin6Element = document.querySelector(".temperature-Min-day6-value");
+
 const iconDay0Element = document.querySelector(".weather-day0-icon");
 const iconDay1Element = document.querySelector(".weather-day1-icon");
 const iconDay2Element = document.querySelector(".weather-day2-icon");
@@ -24,11 +35,20 @@ const iconDay3Element = document.querySelector(".weather-day3-icon");
 const iconDay4Element = document.querySelector(".weather-day4-icon");
 const iconDay5Element = document.querySelector(".weather-day5-icon");
 const iconDay6Element = document.querySelector(".weather-day6-icon");
-*/
-const tempPredMaxElement = document.querySelector(".tempPredMax");
-const tempPredMinElement = document.querySelector(".tempPredMin");
-const tempPredIconElement = document.querySelector(".weather-pred-icon");
-const dayElement = document.querySelector(".day");
+
+const day0Element = document.getElementById("day0");
+const day1Element = document.getElementById("day1");
+const day2Element = document.getElementById("day2");
+const day3Element = document.getElementById("day3");
+const day4Element = document.getElementById("day4");
+const day5Element = document.getElementById("day5");
+const day6Element = document.getElementById("day6");
+
+
+//const tempPredMaxElement = document.querySelector(".tempPredMax");
+//const tempPredMinElement = document.querySelector(".tempPredMin");
+//const tempPredIconElement = document.querySelector(".weather-pred-icon");
+//const dayElement = document.querySelector(".day");
 
 
 //App data
@@ -83,7 +103,9 @@ function getWeather(geocoordinate) {
             weather.humidity = data.current.humidity;
             weather.description = data.current.weather[0].description;
             weather.iconId = data.current.weather[0].icon;
-            /*
+            weather.windSpeed = data.current.wind_speed;
+            weather.pressure = data.current.pressure;
+
             weather.iconIdDay0 = data.daily[0].weather[0].icon;
             weather.iconIdDay1 = data.daily[1].weather[0].icon;
             weather.iconIdDay2 = data.daily[2].weather[0].icon;
@@ -92,7 +114,7 @@ function getWeather(geocoordinate) {
             weather.iconIdDay5 = data.daily[5].weather[0].icon;
             weather.iconIdDay6 = data.daily[6].weather[0].icon;
             dailyTemperature = [];
-*/
+
 
             // dailyTemperature[i].className = "card-content";
             //dailyTemperature[i].id = "tempPredValue";
@@ -101,15 +123,24 @@ function getWeather(geocoordinate) {
             // console.log(weather.tempDay);
             //tempPredValueElement.innerHTML = `${weather.tempDay}&#176 <span> C</span>`;
 
-/*
-            weather.temDay0 = Math.floor(data.daily[0].temp.day);
-            weather.temDay1 = Math.floor(data.daily[1].temp.day);
-            weather.temDay2 = Math.floor(data.daily[2].temp.day);
-            weather.temDay3 = Math.floor(data.daily[3].temp.day);
-            weather.temDay4 = Math.floor(data.daily[4].temp.day);
-            weather.temDay5 = Math.floor(data.daily[5].temp.day);
-            weather.temDay6 = Math.floor(data.daily[6].temp.day);
-*/
+
+            weather.temMaxDay0 = Math.floor(data.daily[0].temp.max);
+            weather.temMaxDay1 = Math.floor(data.daily[1].temp.max);
+            weather.temMaxDay2 = Math.floor(data.daily[2].temp.max);
+            weather.temMaxDay3 = Math.floor(data.daily[3].temp.max);
+            weather.temMaxDay4 = Math.floor(data.daily[4].temp.max);
+            weather.temMaxDay5 = Math.floor(data.daily[5].temp.max);
+            weather.temMaxDay6 = Math.floor(data.daily[6].temp.max);
+
+
+            weather.temMinDay0 = Math.floor(data.daily[0].temp.min);
+            weather.temMinDay1 = Math.floor(data.daily[1].temp.min);
+            weather.temMinDay2 = Math.floor(data.daily[2].temp.min);
+            weather.temMinDay3 = Math.floor(data.daily[3].temp.min);
+            weather.temMinDay4 = Math.floor(data.daily[4].temp.min);
+            weather.temMinDay5 = Math.floor(data.daily[5].temp.min);
+            weather.temMinDay6 = Math.floor(data.daily[6].temp.min);
+
             const unixTimestamp = data.current.dt;
             const timezoneOffset = data.timezone_offset;
             const milliseconds = (unixTimestamp + timezoneOffset) * 1000;
@@ -119,7 +150,17 @@ function getWeather(geocoordinate) {
             });
             var today = getDaysOfWeek(currentDateObject.getDay());
             weather.dayOfWeek = today;
-            console.log(weather.dayOfWeek);
+
+            weather.day0OfWeekPred = getDaysOfWeek(((currentDateObject.getDay()) + 0 + 1) % 7);
+            weather.day1OfWeekPred = getDaysOfWeek(((currentDateObject.getDay()) + 1 + 1) % 7);
+            weather.day2OfWeekPred = getDaysOfWeek(((currentDateObject.getDay()) + 2 + 1) % 7);
+            weather.day3OfWeekPred = getDaysOfWeek(((currentDateObject.getDay()) + 3 + 1) % 7);
+            weather.day4OfWeekPred = getDaysOfWeek(((currentDateObject.getDay()) + 4 + 1) % 7);
+            weather.day5OfWeekPred = getDaysOfWeek(((currentDateObject.getDay()) + 5 + 1) % 7);
+            weather.day6OfWeekPred = getDaysOfWeek(((currentDateObject.getDay()) + 6 + 1) % 7);
+    
+
+            /*
 
             for (var records = 0; records < data.daily.length; records++) {
                 var iconContainer = document.getElementById("predIcon");
@@ -152,7 +193,6 @@ function getWeather(geocoordinate) {
                 divDay.innerHTML = `${weather.dayOfWeekPred}`;
                 dayContainer.appendChild(document.createElement('p'));
                 dayContainer.appendChild(divDay);
-                /*
                  // let predictedElement = document.getElementById("predictionElement");
                 //predictedElement.appendChild(document.createElement('p'));
                 //predictedElement.appendChild(divIcon);
@@ -160,9 +200,9 @@ function getWeather(geocoordinate) {
                                               <img src="icons/${weather.predIconId}.svg"/>
                                               ${weather.predTempMax}&#176 <span> C &#8673</span>
                                               ${weather.predTempMin}&#176 <span> C &#8675</span>`;
-                                              */
+                                             
 
-            }
+            } */
 
         })
         .then(function () {
@@ -209,21 +249,43 @@ function displayWeather() {
     locationElement.innerHTML = `${weather.city}, ${weather.country}`;
     currentDateElement.innerHTML = `${weather.dayOfWeek}, ${weather.currentDate}`;
 
-    /*
-    temDay0Element.innerHTML = `${weather.temDay0} &#176 <span> C</span>`;
-    temDay1Element.innerHTML = `${weather.temDay1} &#176 <span> C</span>`;
-    temDay2Element.innerHTML = `${weather.temDay2} &#176 <span> C</span>`;
-    temDay3Element.innerHTML = `${weather.temDay3} &#176 <span> C</span>`;
-    temDay4Element.innerHTML = `${weather.temDay4} &#176 <span> C</span>`;
-    temDay5Element.innerHTML = `${weather.temDay5} &#176 <span> C</span>`;
-    temDay6Element.innerHTML = `${weather.temDay6} &#176 <span> C</span>`;
-    iconDay0Element.innerHTML = `<img src="icons/${weather.iconIdDay0}.png"/>`;
-    iconDay1Element.innerHTML = `<img src="icons/${weather.iconIdDay1}.png"/>`;
-    iconDay2Element.innerHTML = `<img src="icons/${weather.iconIdDay2}.png"/>`;
-    iconDay3Element.innerHTML = `<img src="icons/${weather.iconIdDay3}.png"/>`;
-    iconDay4Element.innerHTML = `<img src="icons/${weather.iconIdDay4}.png"/>`;
-    iconDay5Element.innerHTML = `<img src="icons/${weather.iconIdDay5}.png"/>`;
-    iconDay6Element.innerHTML = `<img src="icons/${weather.iconIdDay6}.png"/>`; */
+    temMax0Element.innerHTML = `${weather.temMaxDay0} &#176 <span> C &#8673</span>`;
+    temMax1Element.innerHTML = `${weather.temMaxDay1} &#176 <span> C &#8673</span>`;
+    temMax2Element.innerHTML = `${weather.temMaxDay2} &#176 <span> C &#8673</span>`;
+    temMax3Element.innerHTML = `${weather.temMaxDay3} &#176 <span> C &#8673</span>`;
+    temMax4Element.innerHTML = `${weather.temMaxDay4} &#176 <span> C &#8673</span>`;
+    temMax5Element.innerHTML = `${weather.temMaxDay5} &#176 <span> C &#8673</span>`;
+    temMax6Element.innerHTML = `${weather.temMaxDay6} &#176 <span> C &#8673</span>`;
+
+    temMin0Element.innerHTML = `${weather.temMinDay0} &#176 <span> C &#8675</span>`;
+    temMin1Element.innerHTML = `${weather.temMinDay1} &#176 <span> C &#8675</span>`;
+    temMin2Element.innerHTML = `${weather.temMinDay2} &#176 <span> C &#8675</span>`;
+    temMin3Element.innerHTML = `${weather.temMinDay3} &#176 <span> C &#8675</span>`;
+    temMin4Element.innerHTML = `${weather.temMinDay4} &#176 <span> C &#8675</span>`;
+    temMin5Element.innerHTML = `${weather.temMinDay5} &#176 <span> C &#8675</span>`;
+    temMin6Element.innerHTML = `${weather.temMinDay6} &#176 <span> C &#8675</span>`;
+
+
+    iconDay0Element.innerHTML = `<img src="images/icons/${weather.iconIdDay0}.svg"/>`;
+    iconDay1Element.innerHTML = `<img src="images/icons/${weather.iconIdDay1}.svg"/>`;
+    iconDay2Element.innerHTML = `<img src="images/icons/${weather.iconIdDay2}.svg"/>`;
+    iconDay3Element.innerHTML = `<img src="images/icons/${weather.iconIdDay3}.svg"/>`;
+    iconDay4Element.innerHTML = `<img src="images/icons/${weather.iconIdDay4}.svg"/>`;
+    iconDay5Element.innerHTML = `<img src="images/icons/${weather.iconIdDay5}.svg"/>`;
+    iconDay6Element.innerHTML = `<img src="images/icons/${weather.iconIdDay6}.svg"/>`;
+    
+    day0Element.innerHTML = `${weather.day0OfWeekPred}`;
+    day1Element.innerHTML = `${weather.day1OfWeekPred}`;
+    day2Element.innerHTML = `${weather.day2OfWeekPred}`;
+    day3Element.innerHTML = `${weather.day3OfWeekPred}`;
+    day4Element.innerHTML = `${weather.day4OfWeekPred}`;
+    day5Element.innerHTML = `${weather.day5OfWeekPred}`;
+    day6Element.innerHTML = `${weather.day6OfWeekPred}`;
+    windSpeedElement.innerHTML = `${weather.windSpeed} <span> m/s </span>`;
+    PressureElement.innerHTML = `${weather.pressure} <span> Pa </span>`
+
+
     //tempPredValue.innerHTML = weather.predTempDay;
 
 }
+
